@@ -7,12 +7,12 @@ CREATE TABLE
     UNIQUE INDEX `email_history_id_UNIQUE` (`email_history_id` ASC) VISIBLE
   );
 
-  DELIMITER |
+DELIMITER |
 
 CREATE TRIGGER tg_email
 AFTER UPDATE ON users
 FOR EACH ROW
-BEGIN 
+BEGIN
 	IF OLD.email <> NEW.email THEN
 		INSERT INTO email_history(user_id, email)
 		VALUES (OLD.user_id, OLD.email);
@@ -21,4 +21,4 @@ END |
 
 DELIMITER ;
 
-UPDATE users SET email = 'mouredev@gmail.com' WHERE user_id = 1
+UPDATE users SET email = 'mouredev@gmail.com' WHERE user_id = 1;
