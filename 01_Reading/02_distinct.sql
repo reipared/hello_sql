@@ -1,9 +1,11 @@
+-- Obtiene todos los datos distintos entre si de la tabla "users"
 SELECT DISTINCT
-  age
+  *
 FROM
   users;
 
+-- Obtiene todos los valores distintos referentes al atributo edad de la tabla "users"
 SELECT DISTINCT
-  name
+  age
 FROM
   users;
